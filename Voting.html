@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Voting.css">
+    <title>User Panel</title>
+</head>
+<body>
+    <div class="external-containers">
+        <div class="external-sidebar">
+            <div class="external-sidebar-projname">
+                <h2>USER PANEL</h2>
+            </div>
+            <div class="external-sidebar-button">
+                <h1>Welcome User!</h1>
+                <button id="voteButton" onclick="createForm1()">Vote</button>
+                <br/>
+                <br/>
+                <button id="resultsButton" onclick="createForm3()">View Results</button>
+            </div>
+        </div>
+        <div class="external-main-content">
+            <div class="external-topbar">
+                <h3>ELECTION PARTICIPANT SYSTEM</h3>
+            </div>
+
+            <div class="inner-content">
+                <div class="mutatingForm-BoxModel">
+                    <div class="formShifter"></div>
+                </div>
+            </div>
+                <div id="resultsDiv" class="resultsBox"></div> 
+            </div>
+        </div>
+    </div>
+
+    <script src="Voting.js"></script>
+</body>
+</html>
+

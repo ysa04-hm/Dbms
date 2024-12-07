@@ -1,0 +1,333 @@
+.external-containers{
+    display: flex;
+    flex-direction: row;
+}
+
+.external-sidebar{
+    background-color: rgb(30, 13, 104);
+    height: 100vh;
+    width: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.external-topbar{
+    margin: 30px;
+    height: 80px;
+    width: 210vh;;
+    background-color: rgb(8, 8, 56);
+}
+
+.external-topbar-intro button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: gray;
+    font-size: x-large;
+    opacity: 0.65;
+}
+
+.external-topbar-intro button:hover{
+    color: white;
+    opacity: 1;
+}
+
+.external-topbar-intro button:active{
+    font-size: xx-large;
+    opacity: 1;
+}
+
+
+
+
+
+/*------------------------------------------------------------*/
+
+body{
+    margin: 0;
+    background-color: lightgray;
+}
+
+/*------------------------------------------------------------*/
+
+.external-sidebar-button{
+    margin-top: 25px;
+}
+
+.external-sidebar-button button{
+    padding: 30px;
+    width: 150px;
+    font-size: medium;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.external-sidebar-button button:active{
+    opacity: 0.5;
+}
+
+.external-sidebar-button button:hover{
+    font-size: large;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.external-sidebar h2{
+    color: white;
+}
+
+/*-----------------------------------------------------------*/
+
+.external-topbar-contents{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: space-between;
+    font-size: 23px;
+}
+
+.external-topbar{
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/*-----------------------------------------------------------*/
+
+.inner-content{
+    display: grid;
+    margin-top: 90px;
+    height: 70vh; 
+    grid-template-columns: 400px 790px;
+    border: 5px solid black;
+}
+
+.inner-grid-one{
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+
+.inner-grid-two{
+    background-color: whitesmoke;
+    border-left: 5px solid black;
+    overflow: scroll;
+}
+
+/*-------------------------------------------------------------*/
+
+.mutatingForm-BoxModel{ /* THIS IS IMPORTANT! THIS IS THE MUTATING FORM FOR THE BUTTONS */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 600px;
+    /*background-color: red;* - DEBUGGING PURPOSES */
+}
+
+/*---------------------------------Employee Forms-----------------------*/
+
+.idQuery form{
+    display: flex;
+    flex-direction: column;
+}
+
+.idQuery input{
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.createNew form{
+    display: flex;
+    flex-direction: column;
+}
+
+.createNew input{
+    margin-top: 11px;
+    padding: 3px;
+    border: none;
+    border-radius: 10px;
+}
+
+.modifyEmployee form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modifyEmployee input{
+    margin-top: 8px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+.terminateEmployee form{
+    display: flex;
+    flex-direction: column;
+}
+
+.terminateEmployee input{
+    margin-top: 30px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+/*----------------------------- Department Forms--------------------*/
+
+.exploreDepartment form{
+    display: flex;
+    flex-direction: column;
+}
+
+.exploreDepartment input{
+    margin-top: 15px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.buildDepartment form{
+    display: flex;
+    flex-direction: column;
+}
+
+.buildDepartment input{
+    margin-top: 15px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.reworkDepartment form{
+    display: flex;
+    flex-direction: column;
+}
+
+.reworkDepartment input{
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.dissolveDepartment form{
+    display: flex;
+    flex-direction: column;
+}
+
+.dissolveDepartment input{
+    margin-top: 30px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+/*--------------Project Forms----------------------*/
+
+.showProject form{
+    display: flex;
+    flex-direction: column;
+}
+
+.showProject input{
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.createProject form{
+    display: flex;
+    flex-direction: column;
+}
+
+.createProject input{
+    margin-top: 15px;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+}
+
+.reviseProject form{
+    display: flex;
+    flex-direction: column;
+}
+
+.reviseProject input{
+    margin-top: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+.abandonProject form{
+    display: flex;
+    flex-direction: column;
+}
+
+.abandonProject input{
+    margin-top: 30px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------*/
+
+#buttonCursor{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin: 10px;
+}
+
+
+.terminateSize-submit{
+    font-size: 40px;
+    background-color: black;
+    color: white;
+}
+
+.inner-grid-two{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+

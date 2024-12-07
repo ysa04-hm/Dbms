@@ -1,0 +1,19 @@
+CONFIGURATIONS
+
+Setup localhost MySQL server
+
+MySQL username: root
+MySQL password: root
+
+----------------------------------------------------------------------------
+Download PHP 8.X.X first - enabling mysqli for windows
+
+locate php.ini-production
+
+RENAME php.ini-production to php.ini or php
+
+Remove ; from ;extension=mysqli
+
+Change it to extension= C:ENTER_PATH_HERE\ext\php_pdo_mysql.dll
+
+Find the binary from /ext directory
