@@ -1,5 +1,7 @@
 <?php
 session_start();
+header('Content-Type: application/json');
+error_reporting(0);
 
 $servername = "127.0.0.1";
 $username = "Alexa";         
@@ -13,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['voterID'], $_POST['password'])) {
+    if (isset($_POST['voterID'], $_POST['password'])) { // Corrected key names
         $voterID = $_POST['voterID'];
         $password = $_POST['password'];
 
@@ -26,23 +28,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 
-                echo "You have successfully logged in!
-                Please wait while we redirect you to the homepage.... ";
-                echo '
-                    <script>
-                        setTimeout(function() {
-                            window.location.href = "http://localhost/CC14-VotingSystem-FINALS-main/Voting.html";
-                        }, 3000); // Redirect after 3 seconds
-                    </script>
-                ';
-                exit();
+            // Verify the password against the hash stored in the database
+            if (password_verify($password, $row['Password'])) {
+                // If password matches, return success and the redirect URL
+                echo json_encode([
+                    'success' => true,
+                    'message' => 'Login successful!',
+                    'redirect' => 'http://localhost/CC14-VotingSystem-FINALS-main/Voting.html'
+                ]);
             } else {
-                echo "Invalid voter ID or password!";
+                // If password does not match, return failure
+                echo json_encode(['success' => false, 'message' => 'Invalid voter ID or password!']);
             }
         } else {
-            echo "Invalid voter ID or password!";
+            // If voter ID does not exist, return failure
+            echo json_encode(['success' => false, 'message' => 'Invalid voter ID or password!']);
         }
     } else {
-        echo "Both voter ID and password are required!";
+        // If voter ID or password is missing, return error
+        echo json_encode(['success' => false, 'message' => 'Both voter ID and password are required!']);
     }
+} else {
+    // If the request method is not POST, return an error
+    echo json_encode(['success' => false, 'message' => 'Invalid request method.']);
+}
 ?>
