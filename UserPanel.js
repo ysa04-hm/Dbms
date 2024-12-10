@@ -1,4 +1,3 @@
-
 function createForm1() {
     const loginButton = document.getElementById('loginButton');
     const div = document.querySelector('.formShifter');
@@ -19,27 +18,24 @@ function createForm1() {
         </div>
         `;
 
-        // Handle form submission with JavaScript to prevent page reload
         const form = document.getElementById('loginForm');
         form.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent page reload
 
-            // Simulate form submission (you can replace this with your AJAX code)
             const formData = new FormData(form);
             
-            // Example of how you might send form data to a server without reloading
             fetch('validateVoter.php', {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => response.json()) // Ensure that you parse the response as JSON
             .then(data => {
                 if (data.success) {
-                    // Handle successful login (e.g., redirect or show success message)
-                    alert('Login successful!');
+                    // Redirect to the URL received in the JSON response
+                    window.location.href = data.redirect; // This will handle the redirection
                 } else {
-                    // Handle login failure (e.g., show error message)
-                    alert('Login failed! Please try again.');
+                    // Handle failure - show error message
+                    alert(data.message); // Display the message from the response
                 }
             })
             .catch(error => {
@@ -47,8 +43,5 @@ function createForm1() {
                 alert('An error occurred. Please try again.');
             });
         });
-    } else {
-        console.error('Target element not found!');
     }
 }
-
